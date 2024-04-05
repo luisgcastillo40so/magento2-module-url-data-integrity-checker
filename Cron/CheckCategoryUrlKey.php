@@ -9,7 +9,7 @@ use Baldwin\UrlDataIntegrityChecker\Updater\Catalog\Category\UrlKey as UrlKeyUpd
 
 class CheckCategoryUrlKey
 {
-    const JOB_NAME = 'baldwin_urldataintegritychecker_cron_checkcategoryurlkey';
+    public const JOB_NAME = 'baldwin_urldataintegritychecker_cron_checkcategoryurlkey';
 
     private $urlKeyUpdater;
 

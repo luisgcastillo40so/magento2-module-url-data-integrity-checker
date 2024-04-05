@@ -9,14 +9,14 @@ use Magento\Framework\Stdlib\DateTime\DateTime;
 
 class Meta
 {
-    const STORAGE_SUFFIX = '-meta';
+    public const STORAGE_SUFFIX = '-meta';
 
-    const STATUS_PENDING = 'pending';
-    const STATUS_REFRESHING = 'refreshing';
-    const STATUS_FINISHED = 'finished';
+    public const STATUS_PENDING = 'pending';
+    public const STATUS_REFRESHING = 'refreshing';
+    public const STATUS_FINISHED = 'finished';
 
-    const INITIATOR_CRON = 'cron';
-    const INITIATOR_CLI = 'CLI';
+    public const INITIATOR_CRON = 'cron';
+    public const INITIATOR_CLI = 'CLI';
 
     private $storage;
     private $dateTime;

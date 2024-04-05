@@ -9,7 +9,7 @@ use Baldwin\UrlDataIntegrityChecker\Updater\Catalog\Product\UrlKey as UrlKeyUpda
 
 class CheckProductUrlKey
 {
-    const JOB_NAME = 'baldwin_urldataintegritychecker_cron_checkproducturlkey';
+    public const JOB_NAME = 'baldwin_urldataintegritychecker_cron_checkproducturlkey';
 
     private $urlKeyUpdater;
 

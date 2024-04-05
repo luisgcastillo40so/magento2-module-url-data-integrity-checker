@@ -15,12 +15,12 @@ use Magento\Store\Model\Store;
 
 class UrlPath
 {
-    const URL_PATH_ATTRIBUTE = 'url_path';
-    const URL_PATH_SEPARATOR = '/';
-    const PROBLEM_DESCRIPTION =
+    public const URL_PATH_ATTRIBUTE = 'url_path';
+    public const URL_PATH_SEPARATOR = '/';
+    public const PROBLEM_DESCRIPTION =
         'Category has an incorrect url_path value "%s". It should be "%s".'
         . ' Unfortunately this is not easily fixable using the backend of Magento.';
-    const STORAGE_IDENTIFIER = 'category-url-path';
+    public const STORAGE_IDENTIFIER = 'category-url-path';
 
     private $storesUtil;
     private $categoryCollectionFactory;

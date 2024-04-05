@@ -9,7 +9,7 @@ use Baldwin\UrlDataIntegrityChecker\Updater\Catalog\Product\UrlPath as UrlPathUp
 
 class CheckProductUrlPath
 {
-    const JOB_NAME = 'baldwin_urldataintegritychecker_cron_checkproducturlpath';
+    public const JOB_NAME = 'baldwin_urldataintegritychecker_cron_checkproducturlpath';
 
     private $urlPathUpdater;
 
