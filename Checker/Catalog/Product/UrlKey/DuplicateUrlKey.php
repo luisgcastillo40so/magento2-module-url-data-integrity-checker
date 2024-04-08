@@ -118,7 +118,7 @@ class DuplicateUrlKey
     /**
      * @param ProductCollection<ProductModel> $collection
      */
-    private function storeProductUrlKeyData(int $storeId, ProductCollection $collection)
+    private function storeProductUrlKeyData(int $storeId, ProductCollection $collection): void
     {
         foreach ($collection as $product) {
             assert(is_numeric($product->getEntityId()));

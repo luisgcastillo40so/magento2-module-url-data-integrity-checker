@@ -29,7 +29,7 @@ class Meta
         $this->dateTime = $dateTime;
     }
 
-    public function setPending(string $storageIdentifier, string $initiator)
+    public function setPending(string $storageIdentifier, string $initiator): void
     {
         if ($this->isRefreshing($storageIdentifier)) {
             throw new AlreadyRefreshingException(__(
@@ -49,7 +49,7 @@ class Meta
         ]);
     }
 
-    public function setStartRefreshing(string $storageIdentifier, string $initiator)
+    public function setStartRefreshing(string $storageIdentifier, string $initiator): void
     {
         $storageIdentifier .= self::STORAGE_SUFFIX;
 
@@ -61,7 +61,7 @@ class Meta
         ]);
     }
 
-    public function setFinishedRefreshing(string $storageIdentifier)
+    public function setFinishedRefreshing(string $storageIdentifier): void
     {
         $storageIdentifier .= self::STORAGE_SUFFIX;
 
@@ -76,7 +76,7 @@ class Meta
         ]);
     }
 
-    public function setErrorMessage(string $storageIdentifier, string $message)
+    public function setErrorMessage(string $storageIdentifier, string $message): void
     {
         $storageIdentifier .= self::STORAGE_SUFFIX;
 

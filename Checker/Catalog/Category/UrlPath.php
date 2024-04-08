@@ -164,7 +164,7 @@ class UrlPath
         ));
     }
 
-    private function fetchAllCategoriesWithUrlPathCalculatedByUrlKey()
+    private function fetchAllCategoriesWithUrlPathCalculatedByUrlKey(): void
     {
         $this->calculatedUrlPathPerCategoryAndStoreId = [];
 

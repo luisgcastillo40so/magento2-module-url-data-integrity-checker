@@ -8,8 +8,6 @@ parameters:
         - vendor/*
         - vendor-bin/*
     ignoreErrors:
-        - '/ has no return type specified./'
-
         - message: '/Use service contracts to persist entities in favour of Magento\\Cron\\Model\\Schedule\:\:save\(\) method/'
           count: 1
           path: Cron/ScheduleJob.php

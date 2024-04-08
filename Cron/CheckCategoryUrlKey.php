@@ -19,7 +19,7 @@ class CheckCategoryUrlKey
         $this->urlKeyUpdater = $urlKeyUpdater;
     }
 
-    public function execute()
+    public function execute(): void
     {
         $this->urlKeyUpdater->refresh(MetaStorage::INITIATOR_CRON);
     }

@@ -19,7 +19,7 @@ class CheckProductUrlPath
         $this->urlPathUpdater = $urlPathUpdater;
     }
 
-    public function execute()
+    public function execute(): void
     {
         $this->urlPathUpdater->refresh(MetaStorage::INITIATOR_CRON);
     }

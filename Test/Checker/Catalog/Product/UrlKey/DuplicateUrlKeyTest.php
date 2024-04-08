@@ -23,7 +23,7 @@ class DuplicateUrlKeyTest extends TestCase
      * @param array<array<string, mixed>> $dbData
      * @param array<array<string, mixed>> $expectedResults
      */
-    public function testDuplicatedProductUrlKeyValues(array $dbData, array $expectedResults)
+    public function testDuplicatedProductUrlKeyValues(array $dbData, array $expectedResults): void
     {
         $dbData = array_map(function ($productData) {
             return new DataObject($productData);
