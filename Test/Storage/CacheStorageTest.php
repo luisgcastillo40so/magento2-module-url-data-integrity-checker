@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 
 class CacheStorageTest extends TestCase
 {
-    public function testUpdatingNonExisting()
+    public function testUpdatingNonExisting(): void
     {
         $identifier = 'identifier';
         $data = [
@@ -38,7 +38,7 @@ class CacheStorageTest extends TestCase
         $this->assertEquals($data, $cacheStorage->read($identifier));
     }
 
-    public function testUpdatingExisting()
+    public function testUpdatingExisting(): void
     {
         $identifier = 'identifier';
         $existingData = [
@@ -82,7 +82,7 @@ class CacheStorageTest extends TestCase
         $this->assertEquals($expectedData, $cacheStorage->read($identifier));
     }
 
-    public function testClear()
+    public function testClear(): void
     {
         $identifier = 'identifier';
         $existingData = [
