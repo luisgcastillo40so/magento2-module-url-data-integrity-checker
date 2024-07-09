@@ -19,7 +19,3 @@ parameters:
         - message: '/Parameter \#1 \$(autoload_function|callback) of function spl_autoload_register expects/'
           count: 1
           path: Test/bootstrap.php
-
-        - message: "#^Call to deprecated method withConsecutive\\(\\) of class PHPUnit\\\\Framework\\\\MockObject\\\\Builder\\\\InvocationMocker\\.$#"
-          count: 2
-          path: Test/Storage/CacheStorageTest.php

@@ -60,20 +60,27 @@ class CacheStorageTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $cacheMock->expects($this->exactly(2))
+        $matcher = $this->exactly(2);
+        $cacheMock->expects($matcher)
             ->method('save')
-            ->withConsecutive(
-                [$this->jsonEncode($existingData)],
-                [$this->jsonEncode($expectedData)]
-            )
-            ->willReturn(true);
+            // replacement for withConsecutive,
+            // using https://github.com/sebastianbergmann/phpunit/issues/4026#issuecomment-1556763479
+            ->willReturnCallback(function (string $param) use ($matcher, $existingData, $expectedData) {
+                match ($matcher->numberOfInvocations()) {
+                    1       => $this->assertEquals($param, $this->jsonEncode($existingData)),
+                    2       => $this->assertEquals($param, $this->jsonEncode($expectedData)),
+                    default => throw new \LogicException('unexpected amount of calls'),
+                };
+
+                return true;
+            });
 
         $cacheMock->expects($this->exactly(2))
             ->method('load')
-            ->will($this->onConsecutiveCalls(
+            ->willReturn(
                 $this->jsonEncode($existingData),
-                $this->jsonEncode($expectedData)
-            ));
+                $this->jsonEncode($expectedData),
+            );
 
         $cacheStorage = new CacheStorage($cacheMock);
         $cacheStorage->write($identifier, $existingData);
@@ -97,13 +104,20 @@ class CacheStorageTest extends TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $cacheMock->expects($this->exactly(2))
+        $matcher = $this->exactly(2);
+        $cacheMock->expects($matcher)
             ->method('save')
-            ->withConsecutive(
-                [$this->jsonEncode($existingData)],
-                [$this->jsonEncode($expectedData)]
-            )
-            ->willReturn(true);
+            // replacement for withConsecutive,
+            // using https://github.com/sebastianbergmann/phpunit/issues/4026#issuecomment-1556763479
+            ->willReturnCallback(function (string $param) use ($matcher, $existingData, $expectedData) {
+                match ($matcher->numberOfInvocations()) {
+                    1       => $this->assertEquals($param, $this->jsonEncode($existingData)),
+                    2       => $this->assertEquals($param, $this->jsonEncode($expectedData)),
+                    default => throw new \LogicException('unexpected amount of calls'),
+                };
+
+                return true;
+            });
 
         $cacheMock->expects($this->exactly(1))
             ->method('load')
